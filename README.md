@@ -14,11 +14,11 @@
 
 **ALGAD**  
 * [Homework 1](/ALGAD/Homework%201/ALGAD_hm1.pdf)   
-* [Homework 2](/ALGAD/Homework%201/ALGAD_hm2.pdf)  
+* [Homework 2](/ALGAD/Homework%202/ALGAD_hm2.pdf)  
 
 **AM**  
 * [Homework 1](/AM/Homework%201/AM_hm1.pdf)  
-* [Homework 2](/AM/Homework%201/AM_hm2.pdf)  
+* [Homework 2](/AM/Homework%202/AM_hm2.pdf)  
 
 **BD**  
 * [Cloud Computing](/BD/Cloud%20Computing/BD_hm1.pdf)  
@@ -29,9 +29,9 @@
 
 **IA**  
   * [Homework 1](/IA/Homework%201/IA_hm1.ipynb)  
-  * [Homework 2](/IA/Homework%201/IA_hm2.ipynb)  
-  * [Homework 3](/IA/Homework%201/IA_hm3.ipynb)   
-  * [Homework 4](/IA/Homework%201/IA_hm4.ipynb)  
+  * [Homework 2](/IA/Homework%202/IA_hm2.ipynb)  
+  * [Homework 3](/IA/Homework%203/IA_hm3.ipynb)   
+  * [Homework 4](/IA/Homework%204/IA_hm4.ipynb)  
 
 **LFC**  
 * [DFA](/LFC/DFA/README.md)    

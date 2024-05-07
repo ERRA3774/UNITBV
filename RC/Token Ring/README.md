@@ -10,3 +10,6 @@ Se simuleaza urmatoarele transferuri de date: C->E, F->B, A->D, E->A, B->C, D->F
 Se doreste afisarea mesajelor atat la transferul de date catre token cat si la sosirea acestuia la un potential destinatar.
 Indicatie: OOP
 ```
+
+https://github.com/ERRA3774/UNITBV/assets/93817419/3030a94e-afe6-4ee6-9b90-93b1ea43612a
+

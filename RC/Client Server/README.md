@@ -1,5 +1,7 @@
 # Client Server
 
+https://github.com/ERRA3774/UNITBV/assets/93817419/ce7c70f2-3c92-4aaa-b7d5-cfaf14a76113
+
 ```cpp
 /*
 Sa se implementeze aplicatiile prezentate mai jos.

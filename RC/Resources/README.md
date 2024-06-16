@@ -427,4 +427,307 @@ c) registrului de control CSB.
 b) registrului de control SSR.   
 d) registrului de control PCR.  
 
+9. Numărul de coliziuni şi de încercări de evitare a acestora este direct proporţional cu:  
+a) numărul de procese care se execută pe calculatoare din reţea.   
+**b) numărul de calculatoare din reţea.**  
+c) numărul de servere din reţea.   
+d) numărul de switch-uri din reţea.   
+
+10. Care dintre metodele de acces la mediul de comunicaţie nu este competiţională: 
+a) CSMA/CD.   
+b) CSMA/AC.  
+c) Transfer de jeton.   
+**d) Token Ring.**    
+
+11. În cazul transmiterii neorientate pe conexiune a cadrelor de date, se presupune că:  
+a) Fiecare cadru de date care trebuie transmis, este trimis gazdei următoare din reţea.   
+**b) Fiecare cadru de date care trebuie transmis, conţine adresa completă de destinaţie.**   
+c) Fiecare cadru de date care trebuie transmis, este trimis următorului switch.  
+d) Fiecare cadru de date care trebuie transmis, este trimis următorului router. 
+
+
+## Modulul 3
+
+### TODO 1
+
+1. Se dă adresa 126.95.0.0. Scrieţi tipul şi clasa adresei.
+
+```txt
+Clasa A - primul bit al primului octet = 0
+Clasa B - primii 2 biti ai primului octet = 10
+Clasa C - primii 3 biti ai primului octet = 110
+Clasa D - primii 4 biti ai primului octet = 1110
+Clasa E - primii 4 biti ai primului octet = 1111
+
+Ip: 126.95.0.0 -> 0111 1110. 0101 1111. 0000 0000. 0000 0000 => Clasa A
+```
+
+2. Scrieţi adresa reţelei din care face parte gazda de adresă 190.19.23.98. Scrieţi adresa de difuzare pe această reţea.
+```txt
+Ip: 190.19.23.98 -> 1011 1110. 0001 0011. 0001 0111. 0110 0010 => Clasa B
+
+Network Ip  : 190.19.0.0
+Broadcast Ip: 190.19.255.255
+```
+ 
+3. Scrieţi o adresă de gazdă de clasă C. Scrieţi adresele reţelei din care face 
+parte gazda. Care este adresa de broadcast pe această reţea.
+
+```
+Clasa C - primii 3 biti ai primului octet = 110 => 1100 0000 = 192
+Network Ip  : 192.168.1.0
+Broadcast Ip: 192.168.1.255
+```
+
+
+### TODO 2
+
+1. Dacă adresa IP este 190.95.92.144 şi masca de subreţea este 255.255.254.0, determinaţi:  
+
+a) Numărul de biţi împrumutaţi pentru a se crea subreţele.   
+
+```txt
+
+Ip: 190.95.92.144
+
+190 -> 1011 1110
+ 95 -> 0101 1111
+ 92 -> 0101 1100
+144 -> 1001 0000
+
+190.95.92.144 -> 1011 1110. 0101 1111. 0101 1100. 1001 0000 => Clasa B
+Net    mask: 255.255.0.0
+Subnet mask: 255.255.254.0
+
+255 -> 1111 1111
+255 -> 1111 1111
+254 -> 1111 1110
+  0 -> 0000 0000
+
+255.255.254.0 -> 1111 1111. 1111 1111. 1111 1110. 0000 0000
+
+Numarul zecimal 254 convertit in binar reprezinta numarul de biti imprumutati 7 pentru a crea subretele
+```
+
+b) Adresa sub-reţelei căreia îi aparţine o gazda dată.    
+
+```txt
+
+Pentru a determina subreteaua careia ii apartine gazda, efectuam operatia AND intre reprezentarile binare ale adresei IP si mastii de subretea.
+
+Adreasa Ip : 190.95.92.144
+Subnet mask: 255.255.254.0
+
+1011 1110. 0101 1111. 0101 1100. 1001 0000 | AND
+1111 1111. 1111 1111. 1111 1110. 0000 0000 |
+-------------------------------------------+
+1011 1110. 0101 1111. 0101 1100. 0000 0000
+
+Adresa subretea: 190.95.92.0
+```
+
+2. Aceeşi problemă pentru adresa 126.95.0.0 cu masca 255.252.0.0, respectiv 199.99.33.88, cu masca 255.255.255.252 
+
+```txt
+Ip            : 126.95.0.0   -> 0111 1110. 0101 1111. 0000 0000. 0000 0000 => Clasa A
+Masca subretea: 255.252.0.0  -> 1111 1111. 1111 1100. 0000 0000. 0000 0000 
+Masca retea   : 255.0.0.0    -> 1111 1111. 0000 0000. 0000 0000. 0000 0000
+
+Numarul zecimal 252 convertit in binar reprezinta numarul de biti imprumutati 6 pentru a crea subretele
+
+0111 1110. 0101 1111. 0000 0000. 0000 0000 | AND
+1111 1111. 1111 1100. 0000 0000. 0000 0000 |
+------------------------------------------+
+0111 1110. 0101 1000. 0000 0000. 0000 0000
+
+Adresa subretea: 126.88.0.0
+
+
+Ip            : 199.99.33.88    -> 1100 0111. 0110 0011. 0010 0001. 0101 1000 => Clasa C
+Masca subretea: 255.255.255.252 -> 1111 1111. 1111 1111. 1111 1111. 1111 1100
+Masca retea   : 255.255.255.0   -> 1111 1111. 1111 1111. 1111 1111. 0000 0000
+
+Numarul zecimal 252 convertit in binar reprezinta numarul de biti imprumutati 6 pentru a crea subretele
+
+1100 0111. 0110 0011. 0010 0001. 0101 1000 | AND
+1111 1111. 1111 1111. 1111 1111. 1111 1100 |
+------------------------------------------+
+1100 0111. 0110 0011. 0010 0001. 0101 1000
+
+Adresa subretea: 199.99.33.88
+```
+
+3. Se dă adresa 130.131.255.255.  
+
+a) Carei clase îi aparţine adresa dată? De ce tip este adresa? 
+
+```txt
+130.131.255.255 -> 1000 0010. 1000 0011. 1111 1111. 1111 1111
+
+Clasa: B
+Tip adresa: Adresa de broadcast  
+```
+
+b) Care este masca de sub-reţea implicită? Care este adresa reţelei? 
+
+```txt
+130.131.255.255
+
+Adresa de retea: 130.131.0.0
+Masca subretea 255.255.0.0
+```
+
+c) Care este adresa celei de a 25-a gazde din această reţea?  
+
+```txt
+Adresa de retea: 130.131.0.0
+Adresa celei de a 25-a gazde: 130.131.0.25
+```
+
+d) Câte gazde pot exista în întreaga reţea, conform celor de mai sus?
+
+```txt
+Pot exista 2^16 - 2 de gazde
+```
+
+e) Câţi biţi trebuie să se împrumute, dacă:  
+* numărul este minim şi se crează 17 subreţele,  
+* numărul este maxim, astfel încât în fiecare subreţea să existe 31 de gazde.
+
+```txt
+Pp n = nr de biti imprumutati
+
+Numărul este minim şi se crează 17 subreţele
+2^n >= 17
+2^0 = 1  >= 17 F
+2^1 = 2  >= 17 F
+2^2 = 4  >= 17 F
+2^3 = 8  >= 17 F
+2^4 = 16 >= 17 F
+2^5 = 32 >= 17 A
+Numarul de biti care trebuie imprumutati = 5
+
+Numărul este maxim, astfel încât în fiecare subreţea să existe 31 de gazde.
+2^h - 2 >= 31
+2^0 - 2 = -1 >= 31 F
+2^1 - 2 = 0  >= 31 F
+2^2 - 2 = 2  >= 31 F
+2^3 - 2 = 6  >= 31 F
+2^4 - 2 = 14 >= 31 F
+2^5 - 2 = 30 >= 31 F
+2^6 - 2 = 62 >= 31 A
+Numarul de biti care trebuie imprumutati = 6
+```
+
+f) În condiţiile de la e.1., să se scrie adresa IP a ultimei subreţele, domeniul adreselor gazdelor, adresa IP de broadcast pentru această subreţea, adresa celei de a 19 - a gazde din această subreţea.
+
+```txt
+
+1000 0010. 1000 0011. 1111 1111. 1111 1111
+
+2 <= k <= 14
+
+```
+
+g) Dacă se împrumută 4 biţi pentru crearea de subreţele, să se scrie într-un tabel adresa IP a fiecărei subreţele, domeniul adreselopentru gazde, adresa de broadcast.
+
+e) Câte gazde se pot crea în cadrul reţelei iniţiale, dacă nu se fac subreţele?  
+
+4. Se dă adresa IP 194.195.196.198, cu masca de reţea 255.255.255.240 
+    a) Să se determine adresa reţelei, adresa subreţelei, a câta gazdă este în subreţeaua respectivă, adresa de broadcast pe subreţea.   
+    b) Numărul maxim de gazde din fiecare subreţea, numărul de subreţele care se pot obţine, numărul total de gazde din reţea (de pe toate subreţelele).  
+    c) Adresele fiecărei subreţele, domeniul de adrese pentru gazdele din fiecare subreţea, adresele de broadcast pentru fiecare subreţea.   
+
+
+### Test de evaluare 4
+
+1. Fiecare reţea, care are o adresă din clasa A, poate avea asignate pentru unităţile ataşate ei, cel mult:   
+a) 2^32-2 adrese IP posibile.   
+b) 2^16-2 adrese IP posibile.  
+**c) 2^24-2 adrese IP posibile.**   
+d) 2^8-2 adrese IP posibile. 
+
+2. Un mod de a recunoaşte dacă o unitate este ataşată unei adrese de tip B, este de a verifica dacă numărul memorat în primul octet este cuprins între: 128 şi 191.   
+**a) 128 şi 191.**   
+b) 64 şi 128.  
+c) 64 şi 191.   
+d) 191 şi 223.
+
+3. În cazul adreselor IP de clasă C, care octeţi identifică numărul de reţea:   
+a) ultimii trei.  
+b) primii doi.  
+c) ultimii doi.   
+**d) primii trei.**
+
+4. Adresele din care clasă sunt de tip multicast:   
+a) A.   
+b) C.  
+c) B.   
+**d) D.**  
+
+5. Dacă cele trei reţele locale din figura 3.1.5 sunt de clasă A, gazdele A1, A2, B1, C1 pot avea adresele:    
+a) 125.126.127.128; 125.127.128.126; 27.126.125.128; 128.125.127.126.    
+**b) 125.126.127.128; 125.126.127.129; 125.127.127.130; 125.125.124.123**    
+c) 129.126.127.128; 129.126.128.127; 129.127.128.126; 129.128.127.126.   
+d) 129.126.127.128; 129.127.128.127; 129.127.128.126; 125.127.126.128.   
+
+6. Numărul cel mai mare de adrese disponibile care pot fi atribuite gazdelor, se găseşte într-o reţea de:  
+**a) clasă A.**   
+b) clasă B.   
+c) clasă C.  
+d) clasă D. 
+
+7. Pentru a se crea câmpul de subreţea se împrumută:  
+**a) Un număr de cel puţin 2 biţi, care sunt cei mai din dreapta ai câmpului de gazdă.** 
+b) Un număr de cel puţin 2 biţi, care sunt cei mai din stânga ai câmpului de gazdă. 
+c) Un număr de cel puţin 2 biţi, care sunt cei mai din dreapta ai câmpului de reţea. 
+d) Un număr de cel mult 2 biţi, care sunt cei mai din dreapta ai câmpului de reţea. 
+
+8. Pentru determinarea sub-reţelei căreia îi aparţine o anumită gazdă, se execută:  
+a) O operaţie “sau” logic între adresa IP a gazdei destinaţie şi masca de subreţea, exprimate în forma binară.  
+b) O operaţie “sau exclusiv” logic între adresa IP a gazdei destinaţie şi masca de subreţea, exprimate în forma binară.  
+**c) O operaţie “şi” logic între adresa IP a gazdei destinaţie şi masca de subreţea, exprimate în forma binară.**  
+d) O operaţie “şi exclusiv” logic între adresa IP a gazdei destinaţie şi masca de subreţea, exprimate în forma binară.  
+
+9. Relativ la figura 3.1.5, care dintre protocoalele de rezoluţie a adreselor va fi folosit, dacă gazda A1 doreşte să transmită un pachet gazdei A3: 
+**a) ARP.**   
+b) Proxy-TCP   
+c) Proxy-IP.  
+d) Proxy-ARP.
+
+10. Relativ la figura 3.1.5, care dintre protocoalele de rezoluţie a adreselor va fi folosit, dacă gazda A1 doreşte să transmită un pachet gazdei C1:  
+a) ARP.   
+b) Proxy-TCP.   
+c) Proxy-IP.  
+**d) Proxy-ARP.**
+
+11. Care dintre nivelurile OSI realizează routarea:  
+a) Legătură de date.  
+b) Aplicaţie.   
+**c) Reţea.**  
+d) Transport.  
+
+12. În cadrul unui LAN, un pachet primit de la interfaţa routerului este transportat:  
+a) în antetul LAN.   
+b) în antetul TCP.   
+c) în câmpul aplicaţie.  
+**d) într-un cadru de date.**
+
+13. Un sistem autonom este:   
+a) O regiune dintr-o reţea locală care este administrată de o singură entitate.  
+b) O regiune din reţeaua Internet care este conectată la un singur router.  
+**c) O regiune din reţeaua Internet care este administrată de o singură entitate.**  
+d) O regiune dintr-o reţea locală care este conectată la un singur router.  
+
+14. În cadrul cărui protocol de routare, costul fiecărei legături este 1:  
+**a) RIP.**   
+b) IGRP.   
+c) EIGRP.  
+d) OSPF. 
+
+15. Protocolul bazat pe vectorul distanţă RIP, efectuează routarea:   
+a) în interiorul unui sistem autonom.  
+b) în interiorul unei reţele locale.   
+**c) într-un domeniu.**   
+d) într-o arie.  
 

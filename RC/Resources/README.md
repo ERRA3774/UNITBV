@@ -731,3 +731,528 @@ b) în interiorul unei reţele locale.
 **c) într-un domeniu.**   
 d) într-o arie.  
 
+Started on	Sunday, 16 June 2024, 8:10 AM
+State	Finished
+Completed on	Sunday, 16 June 2024, 8:36 AM
+Time taken	26 mins 21 secs
+Grade	17.00 out of 20.00 (85%)
+Question 1
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Care dintre urmatoarele protocoale au rolul de alocare a adreselor IP?
+
+Question 1Answer
+
+a.
+Bootstrap Protocol si DHCP
+
+
+b.
+DNS si POP3
+
+
+c.
+TCP/IP si UDP
+
+
+d.
+DHCPDISCOVER, DHCPOFFER si DHCPREQUEST
+
+Feedback
+The correct answer is: Bootstrap Protocol si DHCP
+Question 2
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Care dintre urmatoarele afirmatii este FALSA in raport cu ideea de Sistem Autonom (AS)?
+
+Question 2Answer
+
+a.
+Un Sistem Autonom este impartit in arii de retele si gazde
+
+
+b.
+Un Sistem Autonom deserveste toate organizatiile comerciale
+
+
+c.
+Ariile unui Sistem Autonom comunica prin intermediul unei "coloane vertebrale - backbone"
+
+
+d.
+Ariile unui Sistem Autonom utilizeaza protocoale distincte de dirijare a pachetelor in interiorul AS-ului si intre AS-uri
+
+Feedback
+The correct answer is: Un Sistem Autonom deserveste toate organizatiile comerciale
+Question 3
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Ce topologie de retea este deservita de protocolul Token Ring?
+
+Question 3Answer
+
+a.
+magistrala
+
+
+b.
+topologie cu configuratie mixta
+
+
+c.
+stea
+
+
+d.
+inel
+
+Feedback
+The correct answer is: inel
+Question 4
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Rolul protocolului SMTP este urmatorul:
+
+Question 4Answer
+
+a.
+asigura transferul de date intre 2 gazde
+
+
+b.
+asigura transportul de mesaje de posta electronica de la serverul de email la gazde
+
+
+c.
+asigura transferul de fisiere in retea
+
+
+d.
+asigura transportul de mesaje de posta electronica intre 2 gazde
+
+Feedback
+The correct answer is: asigura transportul de mesaje de posta electronica intre 2 gazde
+Question 5
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Care dintre urmatorii algoritmi de criptare utilizeaza trunchierea mesajului?
+
+Question 5Answer
+
+a.
+MD4, MD5, SHA
+
+
+b.
+DES si RSA
+
+
+c.
+RSA si MD5
+
+
+d.
+RSA si Diffie-Hellman
+
+Feedback
+The correct answer is: MD4, MD5, SHA
+Question 6
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Ce reprezinta un sistem de criptare simetric?
+
+Question 6Answer
+
+a.
+Un sistem ce utilizeaza aceeasi cheie si pentru criptare si pentru decriptare
+
+
+b.
+Este acelasi cu un sistem de criptare cu cheie publica
+
+
+c.
+Un sistem ce utilizeaza chei diferite pentru criptare si decriptare
+
+
+d.
+Un sistem de criptare conventional
+
+Feedback
+The correct answer is: Un sistem ce utilizeaza aceeasi cheie si pentru criptare si pentru decriptare
+Question 7
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Protocolul ARP este cel care:
+
+Question 7Answer
+
+a.
+returneaza portul la care asculta o aplicatie
+
+
+b.
+returneaza adresa MAC pe baza unei adrese IP
+
+
+c.
+returneaza adresa IP pe baza unei adrese MAC
+
+
+d.
+returneaza asocierea dintre numarul de port si adresa IP
+
+Feedback
+The correct answer is: returneaza adresa MAC pe baza unei adrese IP
+Question 8
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Rolul unui mesaj ACK este:
+
+Question 8Answer
+
+a.
+de a solicita confirmarea primirii mesajului pe care o sursa il transmite unei destinatii
+
+
+b.
+de a marca acceptarea unei conexiuni
+
+
+c.
+de a marca o cerere de conexiune
+
+
+d.
+de a confirma primirea unui mesaj de la gazda sursa
+
+Feedback
+The correct answer is: de a confirma primirea unui mesaj de la gazda sursa
+Question 9
+Incorrect
+Mark 0.00 out of 1.00
+Remove flag
+Question text
+Ce afirmatie este FALSA cu privire la Autentificarea cu Chei Publice?
+
+Question 9Answer
+
+a.
+Doua gazde care doresc sa se autentifica folosesc un server de autentificare
+
+
+b.
+Serverul de autentificare genereaza un interval de timp in care este valida cheia de sesiune
+
+
+c.
+Serverul de autentificare transmite un mesaj gazdelor prin care confirma autentificarea acestora
+
+
+d.
+Serverul de autentificare va genera cheia cu care vor fi criptate/decriptate mesajele transmise intre gazde, dupa autentificare
+
+Feedback
+The correct answer is: Serverul de autentificare transmite un mesaj gazdelor prin care confirma autentificarea acestora
+Question 10
+Incorrect
+Mark 0.00 out of 1.00
+Remove flag
+Question text
+Un URL reprezinta:
+
+Question 10Answer
+
+a.
+referinta catre o aplicatie web
+
+
+b.
+referinta catre un fisier ce se poate deschide intr-un browser web
+
+
+c.
+calea catre un fisier HTML
+
+
+d.
+calea catre un fisier stocat local
+
+Feedback
+The correct answer is: referinta catre un fisier ce se poate deschide intr-un browser web
+Question 11
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Care dintre urmatoarele afirmatii referitoare la adresele IPv6 este FALSA?
+
+Question 11Answer
+
+a.
+Adresele IPv6 pot fi scrise si intr-un format comprimat
+
+
+b.
+Antetul unei adrese IPv6 nu contine nici numarul de fragment si nici bitul care indica daca mai urmeaza si alte datagrame in sesiune
+
+
+c.
+O adresa IPv6 este reprezentata pe 16 octeti
+
+
+d.
+O adresa IPv6 este reprezentata ca 8 grupuri de cifre hexazecimale
+
+Feedback
+The correct answer is: Antetul unei adrese IPv6 nu contine nici numarul de fragment si nici bitul care indica daca mai urmeaza si alte datagrame in sesiune
+Question 12
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Semnatura digitala este:
+
+Question 12Answer
+
+a.
+o metoda de a verifica integritatea mesajelor
+
+
+b.
+o metoda de generare a cheilor de criptare
+
+
+c.
+o metoda de detectie a erorilor de transmitere a mesajelor
+
+
+d.
+o metoda de criptare a mesajelor
+
+Feedback
+The correct answer is: o metoda de a verifica integritatea mesajelor
+Question 13
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Din punctul de vedere al organizarii, protocolul DNS poate fi vazut ca:
+
+Question 13Answer
+
+a.
+un spatiu de adrese IP
+
+
+b.
+un spatiu ierarhizat de nume
+
+
+c.
+o structura de domenii primare
+
+
+d.
+o structura formata din nume si adrese IP
+
+Feedback
+The correct answer is: un spatiu ierarhizat de nume
+Question 14
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Placa de retea actioneaza ca:
+
+Question 14Answer
+
+a.
+mecanism de codificare a cadrelor de date in siruri de biti
+
+
+b.
+mecanism de routare a pachetelor in retea
+
+
+c.
+interfata fizica intre gazda si retea
+
+
+d.
+interfata logica pentru incapsularea cadrelor de date in pachete IP
+
+Feedback
+The correct answer is: interfata fizica intre gazda si retea
+Question 15
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Protocolul UDP este implementat in arhitectura OSI la:
+
+Question 15Answer
+
+a.
+Nivelul Transport
+
+
+b.
+Nivelul Acces la Retea
+
+
+c.
+Nivelul Aplicatie
+
+
+d.
+Nivelul Sesiune
+
+Feedback
+The correct answer is: Nivelul Transport
+Question 16
+Incorrect
+Mark 0.00 out of 1.00
+Remove flag
+Question text
+Mecanismul NAT presupune:
+
+Question 16Answer
+
+a.
+permiterea ca 2 calculatoare din reteaua Internet sa foloseasca aceeasi adresa IP publica
+
+
+b.
+transformarea unei adrese IP publica intr-una privata
+
+
+c.
+permiterea ca 2 calculatoare dintr-o retea locala sa foloseasca aceeasi adresa IP privata
+
+
+d.
+transformarea unei adrese IP privata intr-una publica
+
+Feedback
+The correct answer is: transformarea unei adrese IP privata intr-una publica
+Question 17
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Domeniile primare de nume recunoscute de protocolul DNS sunt reprezentate de:
+
+Question 17Answer
+
+a.
+numele diferitelor institutii
+
+
+b.
+nume de tari
+
+
+c.
+nume de organizatii
+
+
+d.
+diferite tipuri de organizatii si tari
+
+Feedback
+The correct answer is: diferite tipuri de organizatii si tari
+Question 18
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Diferitele tipuri de medii de comunicatie in retea au impact direct asupra carui nivel al arhitecturii OSI?
+
+Question 18Answer
+
+a.
+Nivelul Aplicatie
+
+
+b.
+Nivelul Retea
+
+
+c.
+Nivelul Legatura de Date
+
+
+d.
+Nivelul Fizic
+
+Feedback
+The correct answer is: Nivelul Fizic
+Question 19
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Algoritmul Ferestrei Glisante reprezinta:
+
+Question 19Answer
+
+a.
+un mecanism de transmitere de mesaje fara confirmarea primirii
+
+
+b.
+un mecanism de transmitere de mesaje intre 2 gazde, cu confirmarea primirii
+
+
+c.
+un mecanism de criptare a mesajelor transmise intre 2 gazde
+
+
+d.
+un mecanism de autentificare dinaintea unei sesiuni de comunicare intre 2 gazde
+
+Feedback
+The correct answer is: un mecanism de transmitere de mesaje intre 2 gazde, cu confirmarea primirii
+Question 20
+Correct
+Mark 1.00 out of 1.00
+Remove flag
+Question text
+Datagrama este denumirea pe care o poarta mesajul transmis in cazul utilizarii protocolului:
+
+Question 20Answer
+
+a.
+TCP
+
+
+b.
+RPC
+
+
+c.
+ARP
+
+
+d.
+UDP
+
+Feedback
+The correct answer is: UDP

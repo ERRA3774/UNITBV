@@ -67,52 +67,52 @@ Mode                 LastWriteTime         Length Name
 
 1. Despre Common Intermediate Language:
 
-a) cunoaste conceptul de polimorfism
-b) este disponibil doar pentru limbajele C# si Visual Basic.NET
-c) este limbaj masina
+a) cunoaste conceptul de polimorfism  
+b) este disponibil doar pentru limbajele C# si Visual Basic.NET  
+c) este limbaj masina  
 
-> Raspuns:
-a) cunoaste conceptul de polimorfism
+> Raspuns:  
+a) cunoaste conceptul de polimorfism  
 
 2. Functionalitatile de nivel scazut (precum operatii de intrare/iesire, fire de executie) sunt asigurate de:
 
-a) FCL (Framework Class Library)
-b) CLS (Common Language Specification)
-c) BCL (Base Class Library)
-d) CTS (Common Type System)
+a) FCL (Framework Class Library)  
+b) CLS (Common Language Specification)  
+c) BCL (Base Class Library)  
+d) CTS (Common Type System)  
 
-> Raspuns:
-c) CLS (Common Language Specification)
+> Raspuns:  
+c) CLS (Common Language Specification)  
 
 3. In ce varianta de JIT se face precompilarea intregului cod CIL (Common Intermediate Language)?
 
-a) normal JIT
-b) ecno-JIT
-c) pre-JIT
+a) normal JIT  
+b) ecno-JIT  
+c) pre-JIT  
 
 > Raspuns:
-c) pre-JIT
+c) pre-JIT  
 
 4. Din ce se compune un assembly?
 
-a) cod compilat
-b) metadate
-c) intregul cod sursa al aplicatiei
-d) manifest
+a) cod compilat  
+b) metadate  
+c) intregul cod sursa al aplicatiei  
+d) manifest  
 
-> Raspuns:
-a) cod compilat,
-b) metadate,
-c) manifest
+> Raspuns:  
+a) cod compilat,  
+b) metadate,  
+c) manifest  
 
 5. Cine se ocupa de dealocarea de memorie?
 
-a) CLS (Common Language Specification)
-b) BCL (Base Class Library)
-c) CTS (Common Type System)
+a) CLS (Common Language Specification)  
+b) BCL (Base Class Library)  
+c) CTS (Common Type System)  
 
-> Raspuns:
-Niciunul din raspunsurile indicate; delocarea se face de catre Garbage Collection, parte din Common Language Runtime
+> Raspuns:  
+Niciunul din raspunsurile indicate; delocarea se face de catre Garbage Collection, parte din Common Language Runtime  
 
 
 ### TODO 4/7
@@ -128,7 +128,6 @@ int.MaxValue=2147483647
 ### TODO 5/7
 
 Pentru tipul enumerare LineStyle definit anterior scrieti o aplicatie care sa afiseze pe ecran campurile pe care le contine.
-
 ```cs
 Console.WriteLine($"LineStyle.{LineStyle.Solid}, LineStyle.{LineStyle.Dotted}, LineStyle.{LineStyle.DotDash}");
 /*
@@ -177,96 +176,97 @@ Error (active)	CS0266	Cannot implicitly convert type 'double' to 'int'. An expli
 
 1. Despre tipuri de date:
 
-a) tipurile simple sunt tipuri valoare
-b) un tablou de intregi este un tip valoare
-c) tipurile valoare sunt derivate (direct sau indirect) din tipul obiect
-d) conversia de la tipuri valoare la tipuri referinta este de tip explicit si se numeste boxing
+a) tipurile simple sunt tipuri valoare  
+b) un tablou de intregi este un tip valoare  
+c) tipurile valoare sunt derivate (direct sau indirect) din tipul obiect  
+d) conversia de la tipuri valoare la tipuri referinta este de tip explicit si se numeste boxing  
 
-> Raspuns:
-a) tipurile simple sunt tipuri valoare
-c) tipurile valoare sunt derivate din tipul obiect
-d) ar fi corect daca nu s-ar fi specificat explicit - boxing-ul este conversie implicita
+> Raspuns:  
+a) tipurile simple sunt tipuri valoare  
+c) tipurile valoare sunt derivate din tipul obiect  
+d) ar fi corect daca nu s-ar fi specificat explicit - boxing-ul este conversie implicita  
 
-2. Despre tipul string:
+2. Despre tipul string:  
 
-a) este un tip referinta
-b) este tip predefinit
-c) continutul unei variabile de tip string este imutabil
-d) permite verbatim literal
+a) este un tip referinta  
+b) este tip predefinit  
+c) continutul unei variabile de tip string este imutabil  
+d) permite verbatim literal  
 
-> Raspuns:
-a) este un tip referinta
-b) este tip predefinit
-c) continutul unei variabile de tip string este imutabil
-d) permite verbatim literal
+> Raspuns:  
+a) este un tip referinta  
+b) este tip predefinit  
+c) continutul unei variabile de tip string este imutabil  
+d) permite verbatim literal  
 
 3. Pentru tipurile numerice de mai jos, ce este adevarat?
 
-a) float este alias pentru System.Float si se reprezinta pe 32 de biti
-b) double este alias pentru System.Double si se reprezinta pe 64 de biti
-c) byte este tip intreg cu semn, pe 8 biti
-d) decimal este tip numeric in virgula mobila, reprezentat pe 64 de biti
-e) decimal poate reprezenta NaN
-f) literalii de tip decimal se exprima cu sufixul m sau M
+a) float este alias pentru System.Float si se reprezinta pe 32 de biti  
+b) double este alias pentru System.Double si se reprezinta pe 64 de biti  
+c) byte este tip intreg cu semn, pe 8 biti  
+d) decimal este tip numeric in virgula mobila, reprezentat pe 64 de biti  
+e) decimal poate reprezenta NaN  
+f) literalii de tip decimal se exprima cu sufixul m sau M  
 
-> Raspuns:
-b) double este alias pentru System.Double si se reprezinta pe 64 de biti
-f) literalii de tip decimal se exprima cu suficul m sau M
+> Raspuns:  
+b) double este alias pentru System.Double si se reprezinta pe 64 de biti  
+f) literalii de tip decimal se exprima cu suficul m sau M  
 
 4. Despre tipuri enumerare:
 
-a) sunt tipuri valoare
-b) pot contine doua campuri de nume diferite dar cu aceeasi valoare asociata
-c) pot fi reprezentate prin valori in virgula mobila
-d) pot contine intotdeauna si valori negative
-e) permit conversii implicite la valori numerice intregi (de exemplu, la valoare 1)
+a) sunt tipuri valoare  
+b) pot contine doua campuri de nume diferite dar cu aceeasi valoare asociata  
+c) pot fi reprezentate prin valori in virgula mobila  
+d) pot contine intotdeauna si valori negative  
+e) permit conversii implicite la valori numerice intregi (de exemplu, la valoare 1)  
 
-> Raspuns:
-a) sunt tipuri valoare
-b) pot contine doua campuri de nume diferite dar cu aceeasi valoare asociata
+> Raspuns:  
+a) sunt tipuri valoare  
+b) pot contine doua campuri de nume diferite dar cu aceeasi valoare asociata  
 
-5. Pentru linia:
+5. Pentru linia:  
 ```cs
 int[,] tab = { { 1, 2, }, { 3, 4 } };
 ```
-Este adevarat?
+Este adevarat?  
 
-a) este incorecta si va genera eroare de compilare
-b) proprietatea Length returneaza valoare 2
-c) proprietatea Length returneaza valoare 4
-d) metoda Length() returneaza valoare 2
-e) metoda Length() returneaza valoare 4
+a) este incorecta si va genera eroare de compilare  
+b) proprietatea Length returneaza valoare 2  
+c) proprietatea Length returneaza valoare 4  
+d) metoda Length() returneaza valoare 2  
+e) metoda Length() returneaza valoare 4  
 
-> Raspuns:
-c) proprietatea Length returneaza valoarea 4
+> Raspuns:  
+c) proprietatea Length returneaza valoarea 4  
 
-6. Care din urmatoarele sunt conversii implicite?
+6. Care din urmatoarele sunt conversii implicite?  
 
-a) de la float la double
-b) de la double la float
-c) de la 0 la orice variabila de tip enumerare
-d) de la un tablou de tip string de 3 elemente la unul de tip object
-e) de la un tablou de tip int de 3 elemente la unul de tip object
+a) de la float la double  
+b) de la double la float  
+c) de la 0 la orice variabila de tip enumerare  
+d) de la un tablou de tip string de 3 elemente la unul de tip object  
+e) de la un tablou de tip int de 3 elemente la unul de tip object  
 
-> Raspuns:
-a) de la float la double
-c) de la 0 la orice variabila de tip enumerare
-d) de la un tablou de tip string de 3 elemente la unul de tip object
+> Raspuns:  
+a) de la float la double  
+c) de la 0 la orice variabila de tip enumerare  
+d) de la un tablou de tip string de 3 elemente la unul de tip object  
 
-7. Pentru secventa:
+7. Pentru secventa:  
 ```cs
 int x = 3;
 object y = x;
 ```
-Este adevarat?
-a) eroare la compilare
-b) eroare la rulare
-c) la rulare se poate testa daca in interiorul variabilei y se afla un intreg folosind operatorul 'is'
-d) la rulare se poate testa daca in interiorul variabilei y se afla un intreg folosind operatorul 'as'
-e) nu putem sti la rulare daca y provine din boxing-ul unei valori intregi
+Este adevarat? 
 
-> Raspuns:
-c) la rulare se poate testa daca in interiorul variabilei y se afla un intreg folosind operatorul 'is'
+a) eroare la compilare  
+b) eroare la rulare  
+c) la rulare se poate testa daca in interiorul variabilei y se afla un intreg folosind operatorul 'is'  
+d) la rulare se poate testa daca in interiorul variabilei y se afla un intreg folosind operatorul 'as'  
+e) nu putem sti la rulare daca y provine din boxing-ul unei valori intregi  
+
+> Raspuns:  
+c) la rulare se poate testa daca in interiorul variabilei y se afla un intreg folosind operatorul 'is'  
 
 ## Modulul 2
 
@@ -295,7 +295,7 @@ number=4
 
 ### TODO 3/16
 
-Testati printr-un exemplu ca variabila folosita pentru iterare in cadrul unui foreach nu isi poate schimba valoarea prin instructiune de atribuire
+Testati printr-un exemplu ca variabila folosita pentru iterare in cadrul unui foreach nu isi poate schimba valoarea prin instructiune de atribuire  
 
 ```cs
 int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8 };
@@ -390,7 +390,7 @@ using static System.Math;
 
 1. Despre instructiuni de selectie:
 
-a) codul de mai jos genereaza eroare de compilare
+a) codul de mai jos genereaza eroare de compilare  
 ```cs
 if (3) {
   Console.WriteLine("Hello, world!");
@@ -400,75 +400,75 @@ if (3) {
 Error (active)	CS0029	Cannot implicitly convert type 'int' to 'bool'
 */
 ```
-b) o ramura case poate sa nu se incheie cu break, chiar daca contine macar o instructiune
-c) in instructiunea switch este permis ca expresia tastata sa fie un sir de caractere
-d) ramura default din cadrul unei instructiuni switch poate fi prima din bloc
-e) putem intalni instructiunea goto default;
+b) o ramura case poate sa nu se incheie cu break, chiar daca contine macar o instructiune  
+c) in instructiunea switch este permis ca expresia tastata sa fie un sir de caractere  
+d) ramura default din cadrul unei instructiuni switch poate fi prima din bloc 
+e) putem intalni instructiunea goto default;  
 
-> Raspuns:
-a) codul de mai jos genereaza eroare de compilare
-b) o ramura case poate sa nu se incheie cu break, chiar daca contine macar o instructiune
-c) in instructiunea switch este permis ca expresia tastata sa fie un sir de caractere
-d) ramura default din cadrul unei instructiuni switch poate fi prima din bloc
-e) putem intalni instructiunea goto default;
+> Raspuns:  
+a) codul de mai jos genereaza eroare de compilare  
+b) o ramura case poate sa nu se incheie cu break, chiar daca contine macar o instructiune  
+c) in instructiunea switch este permis ca expresia tastata sa fie un sir de caractere  
+d) ramura default din cadrul unei instructiuni switch poate fi prima din bloc  
+e) putem intalni instructiunea goto default;  
 
 2. Care este instructiunea care determina salt peste restul instructiunilor dintr-un ciclu si continuarea de la urmatoare ciclare?
 
-a) break
-b) return
-c) if
-d) case
-e) continue
-f) return
+a) break  
+b) return  
+c) if  
+d) case  
+e) continue  
+f) return  
 
-> Raspuns:
-e) continue
+> Raspuns:  
+e) continue  
 
 3. Varificarea din cadrul blocului checked se efectueaza la:
 
-a) doar la compilare
-b) doar la rulare
-c) atat la compilare, cat si la rulare
+a) doar la compilare  
+b) doar la rulare  
+c) atat la compilare, cat si la rulare  
 
-> Raspuns:
-b) doar la rulare
+> Raspuns:  
+b) doar la rulare  
 
 4. Care este metoda care se apeleaza automat la finalul blocului unei instructiuni using?
 
-a) Delete()
-b) Close()
-c) Exit()
-d) Deallocate()
-e) nu exista instructiunea using
+a) Delete()  
+b) Close()  
+c) Exit()  
+d) Deallocate()  
+e) nu exista instructiunea using  
 
-> Raspuns:
-Niciun raspuns din cele indicate; metoda referita este Dispose();
+> Raspuns:  
+Niciun raspuns din cele indicate; metoda referita este Dispose();  
 
 5. Gradul de vizibilitate implicit al unei clase declarate intr-un spatiu de nume este:
 
-a) public
-b) private
-c) protected
-d) internal
-e) protected internal
+a) public  
+b) private  
+c) protected  
+d) internal  
+e) protected internal  
 
-> Raspuns:
-d) internal
+> Raspuns:  
+d) internal  
 
 6. In C# transmiterea de parametri se face implicit prin:
 
-a) valoare
-b) referinta, prin ref
-c) referinta, prin out
-d) variabilele de tip valoare se transmit prin valoare, cele de tip referinta prin referinta
+a) valoare  
+b) referinta, prin ref  
+c) referinta, prin out  
+d) variabilele de tip valoare se transmit prin valoare, cele de tip referinta prin referinta  
 
-> Raspuns:
-d) variabilele de tip valoare se transmit prin valoare, cele de tip referinta prin referinta
+> Raspuns:  
+d) variabilele de tip valoare se transmit prin valoare, cele de tip referinta prin referinta  
 
 
 ### TODO 7/16
 
-Care este eroarea afisata la incercarea de accesare a unui camp static prin intermediul unui obiect?
+Care este eroarea afisata la incercarea de accesare a unui camp static prin intermediul unui obiect?  
 
 ```cs
 /*
@@ -919,50 +919,50 @@ d. Generarea automată de cod: - Un exemplu comun este generarea automată de co
 
 1. Care este gradul implicit al unui membru intr-o clasa?
 
-a) private
-b) protected
-c) internal
-d) protected internal
-e) public
+a) private  
+b) protected  
+c) internal  
+d) protected internal  
+e) public  
 
-> Raspuns:
-a) private
+> Raspuns:  
+a) private  
 
 2. Ce este adevarat despre clasele statice?
 
-a) pot fi partiale
-b) pot avea constructor instanta
-c) pot avea constructor static calificat ca public
-d) pot avea destructor
-e) pot contine indexatori statici
-f) pot contine proprietati statice
+a) pot fi partiale  
+b) pot avea constructor instanta  
+c) pot avea constructor static calificat ca public  
+d) pot avea destructor  
+e) pot contine indexatori statici  
+f) pot contine proprietati statice  
 
-> Raspuns:
-a) pot fi partiale
-f) pot contine proprietati statice
+> Raspuns:  
+a) pot fi partiale  
+f) pot contine proprietati statice  
 
 3. Ce este adevarat?
 
-a) o clasa abstracta nu poate implementa o interfata
-b) o clasa abstracta nu poate avea destructor
-c) o clasa abstracta poate avea metode cu implementare
-d) o clasa abstracta e automat si sealead
-e) orice clasa este tip referinta
+a) o clasa abstracta nu poate implementa o interfata  
+b) o clasa abstracta nu poate avea destructor  
+c) o clasa abstracta poate avea metode cu implementare  
+d) o clasa abstracta e automat si sealead  
+e) orice clasa este tip referinta  
 
-> Raspuns:
-c) o clasa abstracta poate avea metode cu implementare
-e) orice clasa este tip referinta
+> Raspuns:  
+c) o clasa abstracta poate avea metode cu implementare  
+e) orice clasa este tip referinta  
 
 4. Despre proprietati in cadrul claselor:
 
-a) pot fi declarate statice
-b) pot fi declarate ca abstracte in clase abstracte
-c) pot avea get public si set privat
+a) pot fi declarate statice  
+b) pot fi declarate ca abstracte in clase abstracte  
+c) pot avea get public si set privat  
 
-> Raspuns:
-a) pot fi declarate statice
-b) pot fi declarate ca abstracte in clase abstracte
-c) pot avea get public si set privat
+> Raspuns:  
+a) pot fi declarate statice  
+b) pot fi declarate ca abstracte in clase abstracte  
+c) pot avea get public si set privat  
 
 ```cs
 public abstract class Shape
@@ -975,52 +975,52 @@ public abstract class Shape
 
 1. Ce se pot declara in interfete?
 
-a) campuri
-b) evenimente
-c) constructori de instanta
-d) constructor static
-e) destructor
-f) metode
+a) campuri  
+b) evenimente  
+c) constructori de instanta  
+d) constructor static  
+e) destructor  
+f) metode  
 
-> Raspuns:
-b) evenimente
-f) metode
+> Raspuns:  
+b) evenimente  
+f) metode  
 
 2. Care este gradul de acces implicit al metodelor din cadrul interfetelor?
 
-a) public
-b) private
-c) protected
-d) internal
-e) protected internal
+a) public  
+b) private  
+c) protected  
+d) internal  
+e) protected internal  
 
-> Raspuns:
-a) public
+> Raspuns:  
+a) public  
 
 3. Relativ la structuri:
 
-a) din ele se pot deriva alte tipuri de date
-b) sunt derivate direct din System.ValueType
-c) permit definirea unui constructor static
-d) permit definirea unui destructor
-e) nu pot contine indexatori
+a) din ele se pot deriva alte tipuri de date  
+b) sunt derivate direct din System.ValueType  
+c) permit definirea unui constructor static  
+d) permit definirea unui destructor  
+e) nu pot contine indexatori  
 
-> Raspuns:
-b) sunt derivate direct din System.ValueType
-c) permit definirea unui constructor static
+> Raspuns:  
+b) sunt derivate direct din System.ValueType  
+c) permit definirea unui constructor static  
 
 
 4. Ce este adevarat despre clase abstracte:
 
-a) exista cel putin un caz in care pot contine metoda calificata override
-b) pot declara evenimente
-c) pot fi derivate din mai multe clase, simultan
-d) pot declara ca implementeaza mai multe interfete
+a) exista cel putin un caz in care pot contine metoda calificata override  
+b) pot declara evenimente  
+c) pot fi derivate din mai multe clase, simultan  
+d) pot declara ca implementeaza mai multe interfete  
 
-> Raspuns:
-a) exista cel putin un caz in care pot contine metoda calificata override
-b) pot declara evenimente
-d) pot declara ca implementeaza mai multe interfete
+> Raspuns:  
+a) exista cel putin un caz in care pot contine metoda calificata override  
+b) pot declara evenimente  
+d) pot declara ca implementeaza mai multe interfete  
 
 ## Modulul 3
 
@@ -1128,25 +1128,25 @@ class SomethingElse
 
 1. Tipurile delegat:
 
-a) sunt tipuri valoare
-b) sunt tipuri referinta
-c) sunt tipuri structura
-d) se pot declara doar in interiorul claselor
-e) se pot declara in interiorul interfetelor
+a) sunt tipuri valoare  
+b) sunt tipuri referinta  
+c) sunt tipuri structura  
+d) se pot declara doar in interiorul claselor  
+e) se pot declara in interiorul interfetelor  
 
-> Raspuns:
-b) sunt tipuri referinta
-e) se pot declara in interiorul interfetelor
+> Raspuns:  
+b) sunt tipuri referinta  
+e) se pot declara in interiorul interfetelor  
 
 2. Ce inseamna multicast?
 
-a) un anumit tip de delegat
-b) o inlantuire de conversii de tip
-c) un tip delegat fara parametri de apel
-d) un tip de metoda
+a) un anumit tip de delegat  
+b) o inlantuire de conversii de tip    
+c) un tip delegat fara parametri de apel  
+d) un tip de metoda  
 
-> Raspuns:
-a) un anumit tip de delegat
+> Raspuns:  
+a) un anumit tip de delegat  
 
 
 ### TODO 3/3
@@ -1323,35 +1323,35 @@ One minute has passed. Terminating . . .
 
 1. Un eveniment poate fi tratat printr-o metoda:
 
-a) de orice tip
-b) intotdeauna publica
-c) compatibilita cu orice tip delegat
+a) de orice tip  
+b) intotdeauna publica  
+c) compatibilita cu orice tip delegat  
 
-> Raspuns:
-Niciunul din raspunsurile furnizate; raspunsul corect este 'delegat multicast'
+> Raspuns:  
+Niciunul din raspunsurile furnizate; raspunsul corect este 'delegat multicast'  
 
 2. Subscrierea la un eveniment se face folosind:
 
-a) metoda Subscribe()
-b) metoda subscribe()
-c) un constructor
+a) metoda Subscribe()  
+b) metoda subscribe()  
+c) un constructor  
 
-> Raspuns:
-Niciunul din raspunsuri; subscrierea se face cu operatorul +=
+> Raspuns:  
+Niciunul din raspunsuri; subscrierea se face cu operatorul +=  
 
 3. Despre evenimente:
 
-a) pot fi declarate in interiorul interfetelor
-b) pot fi declarate in interiorul claselor
-c) pot fi declarate direct intr-un spatiu de nume
-d) pot fi declarate in interiorul tipurilor enumerare
-e) pot fi declarate in interiorul tipurilor structura
+a) pot fi declarate in interiorul interfetelor  
+b) pot fi declarate in interiorul claselor  
+c) pot fi declarate direct intr-un spatiu de nume  
+d) pot fi declarate in interiorul tipurilor enumerare  
+e) pot fi declarate in interiorul tipurilor structura  
 
-> Raspuns:
-a) pot fi declarate in interiorul interfetelor
-b) pot fi declarate in interiorul claselor
-c) pot fi declarate direct intr-un spatiu de nume
-e) pot fi declarate in interiorul tipurilor structura
+> Raspuns:  
+a) pot fi declarate in interiorul interfetelor  
+b) pot fi declarate in interiorul claselor  
+c) pot fi declarate direct intr-un spatiu de nume  
+e) pot fi declarate in interiorul tipurilor structura  
 
 ## Modulul 4
 
@@ -1516,37 +1516,37 @@ Urmariti discutia dintre Anders Heilsberg si Bruce Eckel pe tema check/unchecked
 
 1. Despre tipurile exceptie:
 
-a) sunt tipuri valoare
-b) sunt tipuri referinta
-c) se deriveaza intotdeauna direct din tipul Exception
-d) se declara ca fiind aruncate de catre metodele in care pot aparea
+a) sunt tipuri valoare  
+b) sunt tipuri referinta  
+c) se deriveaza intotdeauna direct din tipul Exception  
+d) se declara ca fiind aruncate de catre metodele in care pot aparea  
 
-> Raspuns:
-b) sunt tipuri referinta
+> Raspuns:  
+b) sunt tipuri referinta  
 
-2. Relativ la obiectele exceptie:
+2. Relativ la obiectele exceptie:  
 
-a) continutul lor se stocheaza pe stiva
-b) pot contine alte obiecte de tip exceptie
-c) permit determinarea sirului de apeluri de metode care a dus la aparitia lor
-d) pot fi rearuncate
-e) se prind si se trateaza intr-un bloc finally
+a) continutul lor se stocheaza pe stiva  
+b) pot contine alte obiecte de tip exceptie  
+c) permit determinarea sirului de apeluri de metode care a dus la aparitia lor  
+d) pot fi rearuncate  
+e) se prind si se trateaza intr-un bloc finally  
 
-> Raspuns:
-b) pot contine alte obiecte de tip exceptie
-c) permit determinarea sirului de apeluri de metode care a dus la aparitia lor
-d) pot fi rearuncate
+> Raspuns:  
+b) pot contine alte obiecte de tip exceptie 
+c) permit determinarea sirului de apeluri de metode care a dus la aparitia lor  
+d) pot fi rearuncate  
 
 3. Ce este corect legat de exceptii?
 
-a) pot fi aruncate din constructori
-b) nu pot fi aruncate din destructori
-c) daca nu sunt aruncate, intotdeauna opresc executia intregii aplicatii
-d) cele definite de programator pot contine proprietati calificate cu override
+a) pot fi aruncate din constructori  
+b) nu pot fi aruncate din destructori  
+c) daca nu sunt aruncate, intotdeauna opresc executia intregii aplicatii  
+d) cele definite de programator pot contine proprietati calificate cu override  
 
-> Raspuns:
-a) pot fi aruncate din constructori
-d) cele definite de programator pot contine proprietati calificate de override
+> Raspuns:  
+a) pot fi aruncate din constructori  
+d) cele definite de programator pot contine proprietati calificate de override  
 
 ### TODO 4/x
 

@@ -1355,7 +1355,7 @@ e) pot fi declarate in interiorul tipurilor structura
 
 ## Modulul 4
 
-### TODO 1/x
+### TODO 1/8
 
 Este posibil ca pentru o metoda ce returneaza un tip oarecare (nu void), in bloc finally sa se includa instructinea return? Cum explicati?
 
@@ -1373,7 +1373,7 @@ Dacă am permite o instrucțiune return în blocul finally, ar putea duce la com
 
 Ar fi dificil să ne așteptăm la o valoare de returnare specifică când blocul finally poate modifica această valoare.
 
-### TODO 2/x
+### TODO 2/8
 
 Implementati si executati pas cu pas exemplul de mai jos
 
@@ -1508,11 +1508,11 @@ public class Test
 }
 ```
 
-### TODO 3/x
+### TODO 3/3
 
 Urmariti discutia dintre Anders Heilsberg si Bruce Eckel pe tema check/unchecked exceptions de la adresa: 404 Page not found
 
-#### Test de evaluare
+#### Test de evaluare 1/3
 
 1. Despre tipurile exceptie:
 
@@ -1548,7 +1548,7 @@ d) cele definite de programator pot contine proprietati calificate cu override
 a) pot fi aruncate din constructori  
 d) cele definite de programator pot contine proprietati calificate de override  
 
-### TODO 4/x
+### TODO 4/8
 
 Verificati ca intr-un obiect de tip ArrayList se pot depune consecutiv obiecte de tip int, String, tablou.
 
@@ -1578,7 +1578,7 @@ ArrayList arrayList2 = [
 
 ```
 
-### TODO 5/x
+### TODO 5/8
 
 Implementati si rulati exemplele de mai sus.
 
@@ -1603,3 +1603,1431 @@ foreach (DictionaryEntry entry in hashtable)
 }
 
 ```
+
+### TODO 6/8
+
+```cs
+using System.Collections;
+
+
+class TreeNode<T>
+{
+    private T _value;
+    public T Value
+    {
+        get
+        {
+            return _value;
+        }
+        set
+        {
+            _value = value;
+        }
+    }
+
+    private TreeNode<T> _left;
+    public TreeNode<T> Left
+    {
+        get
+        {
+            return _left;
+        }
+        set
+        {
+            _left = value;
+        }
+    }
+
+    private TreeNode<T> _right;
+    public TreeNode<T> Right
+    {
+        get
+        {
+            return _right;
+        }
+        set
+        {
+            _right = value;
+        }
+    }
+}
+
+class Tree<T>
+{
+    private TreeNode<T> _root;
+
+    public void AddValues(params T[] val)
+    {
+        Array.ForEach(val, Add);
+    }
+
+    public IEnumerable<T> InOrder()
+    {
+        return InOrder(_root);
+    }
+
+    public IEnumerable<T> PreOrder()
+    {
+        return PreOrder(_root);
+    }
+
+    private IEnumerable<T> InOrder(TreeNode<T> node)
+    {
+        if (node.Left != null)
+        {
+            foreach (T val in InOrder(node.Left))
+            {
+                yield return val;
+            }
+        }
+
+        yield return node.Value;
+
+        if (node.Right != null)
+        {
+            foreach (T val in InOrder(node.Right))
+            {
+                yield return val;
+            }
+        }
+    }
+
+    private IEnumerable<T> PreOrder(TreeNode<T> node)
+    {
+        yield return node.Value;
+
+        if (node.Left != null)
+        {
+            foreach (T val in PreOrder(node.Left))
+            {
+                yield return val;
+            }
+        }
+
+        if (node.Right != null)
+        {
+            foreach (T val in PreOrder(node.Right))
+            {
+                yield return val;
+            }
+        }
+    }
+
+    private void Add(T val)
+    {
+
+    }
+}
+```
+
+#### Test de evaluare 2/3
+
+1. Ce conditie trebuie sa indeplineasca o clasa pentru ca peste o instanta a sa sa se poata itera cu instructiunea foreach?
+
+a) sa implementeze interfata ICollection  
+b) sa contina o colectie de valori  
+c) sa implementeze interfata IEnumerable  
+d) sa implementeze interfata CollectionBase  
+
+> Raspuns:  
+c) sa implementeze interfata IEnumerable  
+
+2. Ce tip de date implementeaza politica de access 'primul intrat - primul iesit'?  
+
+a) ArrayList  
+b) BitArray  
+c) Stack  
+d) Queue  
+
+> Raspuns:  
+d) Queue  
+
+3. Care sunt diferentele dintre SortedList si HashTable?  
+
+a) SortedList mentine o lista sortata de elemente, pe cand HashTable este o colectie de perechi de elemente  
+b) SortedList mentine o colectie de perechi sortate dupa valoare, pe cand HashTable nu le sorteaza  
+c) SortedList mentine o colectie de perechi sortate dupa cheie, pe cand HashTable nu le sorteaza  
+d) nu e nici o diferenta, dar SortedList este implementat in versiuni mai recente ale platformei .NET
+
+> Raspuns:  
+c) SortedList mentine o colectie de perechi sortate dupa cheie, pe cand HashTable nu le sorteaza
+
+### TODO 7/8
+
+Implementati exemplul de mai sus in Visual Studio
+
+```cs
+Point<int> u = new Point<int>(10, 10);
+Point<double> v = new Point<double>(1.2, 3.4);
+
+Console.WriteLine(u);
+Console.WriteLine(v);
+
+u.Reset();
+v.Reset();
+
+Console.WriteLine(u);
+Console.WriteLine(v);
+
+struct Point<T>
+{
+    private T _x;
+    private T _y;
+
+    public T X { get { return _x; } set { _x = value; } }
+    public T Y { get { return _y; } set { _y = value; } }
+
+    public Point(T x, T y) 
+    { 
+        _x = x; 
+        _y = y;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("({0}, {1})", _x.ToString(), _y.ToString());
+    }
+
+    public void Reset()
+    {
+        _x = default(T);
+        _y = default(T);
+    }
+}
+```
+
+### TODO 8/8
+
+Implementati in Visual Studio exemplul de mai sus
+
+```cs
+Student s1 = new Student();
+s1.Name = "B";
+s1.AverageGrade = 3;
+
+Student s2 = new Student();
+s2.Name = "A";
+s2.AverageGrade = 5;
+
+Student s3 = new Student();
+s3.Name = "C";
+s3.AverageGrade = 1;
+
+List<Student> students = new List<Student>();
+
+students.Add(s1);
+students.Add(s2);
+students.Add(s3);
+
+Display("Original data:", students);
+
+students.Sort(new ComparerStudentName());
+Display("Sorted by name:", students);
+
+students.Sort(new ComparerStudentGrade());
+Display("Sorted by grade:", students);
+
+ComparerStudentName comp = new ComparerStudentName();
+Console.WriteLine($"Student '{s1.Name}' appears on position {students.BinarySearch(s1, comp)}");
+
+static void Display(string message, List<Student> students)
+{
+    Console.WriteLine(message);
+
+    foreach (var student in students)
+    {
+        Console.WriteLine($"{student.Name}, {student.AverageGrade}");
+    }
+}
+
+class Student
+{
+    private String _name;
+    private double _averageGrade;
+
+    public String Name { get { return _name; } set { _name = value; } }
+    public double AverageGrade { get { return _averageGrade; } set { _averageGrade = value; } }
+}
+
+class ComparerStudentGrade : IComparer<Student>
+{
+    public int Compare(Student a, Student b)
+    {
+        if (a.AverageGrade < b.AverageGrade)
+        {
+            return -1;
+        }
+
+        if (a.AverageGrade == b.AverageGrade) 
+        {
+            return 0;
+        }
+
+        return +1;
+    }
+}
+
+class ComparerStudentName : IComparer<Student>
+{
+    public int Compare(Student a, Student b)
+    {
+        return String.Compare(a.Name, b.Name);
+    }
+}
+
+```
+
+#### Test de evaluare 3/3
+
+1. Despre metode generice:  
+
+a) trebuie sa foloseasca doar transmitere prin referinta  
+b) putem avea metode fara parametri, dor cu tip de return specificat ca parametru de genericitate  
+c) intotdeauna duc la boxing/unboxing  
+
+> Raspuns:  
+Niciunul din raspunsurile specificate
+
+2. Despre tipuri generice:
+
+a) tipurile structura pot fi generice  
+b) tipurile enumerare pot fi generice  
+c) metodele din cadrul tipurilor generice obligatoriu specifica parametrul de genericitate intre `<` si `>`  
+d) pot folosi cuvantul cheie default in declaratiile campurilor 
+
+> Raspuns:  
+a) tipurile structura pot fi generice  
+d) pot folosi cuvantul cheie default in declaratiile campurilor  
+
+3. Pentru constrangerile asupra parametrilor de genericitate: 
+
+a) permit specificarea unui parametru de genericitate ca fiind tip enumerare  
+b) permit specificarea unui parametru de genericitate care sa fie tip referinta  
+c) permit specificarea unui parametru de genericitate care sa fie tip delegat  
+d) se pot specifica si in declarare de tipuri interfata  
+e) permite specificarea tipului de genericitate ca fiind dintr-o multime de tipuri predefinita de programator  
+
+> Raspuns:  
+b) permit specificarea unui parametru de genericitate care sa fie tip referinta  
+d) se pot specifica si in declarare de tipuri interfata  
+
+## Modulul 5  
+
+### TODO 1/10
+
+Care este prefixul folosit de furnizorul de date pentru SQLite? Ce presupune utilizarea acestui furnizor - de unde se descarca assembly-ul aferent, cum se utilizeaza intr-o aplicatie .NET?
+
+Furnizorul de date pentru SQLite nu are un prefix specific, dar conexiunea la o bază de date SQLite se realizează printr-un URL care începe cu prefixul "file:". Acesta conține calea către fișierul bazei de date SQLite. De exemplu, dacă baza de date este în același director și se numește dev.db, URL-ul ar fi "file:./dev.db". 
+
+Pentru a utiliza SQLite într-o aplicație .NET, trebuie să descărcați biblioteca System.Data.SQLite și să o adăugați ca referință în proiectul dvs. După aceea, puteți utiliza clasele și metodele din această bibliotecă pentru a interacționa cu baza de date SQLite.
+
+### TODO 2/10
+
+Ce reprezinta "sqlexpress" din string-ul de conexiune? Ce sinonime se pot folosi pentru "localhost"?
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>
+        <add key="constring" 
+             value="Data Source=localhost\sqlexpress;database=Northwind;User ID=sa;pwd=password"/>
+    </appSettings>
+</configuration>
+```
+
+Într-un string de conexiune pentru SQL Server Express, 'sqlexpress' reprezintă numele implicit al instanței SQL Server Express.  
+Acesta este utilizat pentru a specifica că se dorește conectarea la o instanță SQL Server Express. De exemplu, un string de conexiune ar putea arăta astfel: Data Source=server.com\\SQLEXPRESS;....
+
+Sinonim pentru 'localhost' este '127.0.0.1' (adresa IP loopback)
+
+
+### TODO 3/10
+
+Folosind site-ul [www.connectionstrings.com](https://www.connectionstrings.com/), dati exemplu de un string de conextiune pentru accesarea serverelor Oracle si PostgreSQL
+
+Oracle:
+
+* Standard
+```txt
+Data Source=MyOracleDB;Integrated Security=yes;
+```
+
+* Specifying username and password
+```txt
+Data Source=MyOracleDB;User Id=myUsername;Password=myPassword;Integrated Security=no;
+```
+
+PostgreSQL
+
+* Standard
+
+```txt
+Data Source=MyOracleDB;User Id=myUsername;Password=myPassword;Integrated Security=no;
+```
+
+* Use an OLE DB provider from .NET
+
+```txt
+Provider=any oledb provider's name;OledbKey1=someValue;OledbKey2=someValue;
+```
+
+### TODO 4/10
+
+Verificati in MSDN faptul ca orice tip care implementeaza interfata IDBConnection este vazut ca o resursa pentru care se poate apela metoda Dispose()
+
+
+### TODO 5/10
+
+Implementati exemplul de mai sus in Visual Studio
+
+```cs
+using System.Data;
+using System.Diagnostics;
+
+using Microsoft.Data.SqlClient;
+
+using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constring"].ConnectionString))
+{
+    SqlCommand cmd = new SqlCommand(@"SELECT @count = COUNT(*) FROM Customers WHERE Country = @country",  con);
+    SqlParameter param = new SqlParameter(@"country", SqlDbType.VarChar);
+    param.Value = "USA";
+    cmd.Parameters.Add(param);
+    cmd.Parameters.Add(new SqlParameter("@count", SqlDbType.Int));
+    cmd.Parameters["@count"].Direction = ParameterDirection.Output;
+    con.Open();
+    SqlDataReader reader = cmd.ExecuteReader();
+    while (reader.Read())
+    {
+        Console.WriteLine($"{reader.GetString(0)} - {reader.GetString(1)}");
+    }
+    reader.Close();
+    Console.WriteLine($"Count: {cmd.Parameters["@count"].Value.ToString()}");
+}
+```
+
+Remarcam urmatoarele:
+* este posibil ca intr-o comanda sa se execute mai multe interogari
+* pentru parametrul de iesire numit "@count" trebuie facuta declarare de directie; implicit un parametru este de intrare
+* parametrii de iesire sunt accesibili doar pentru inchiderea obiectului de tip DataReader
+
+### TODO 6/10
+
+Implementati in Visual Studio exemplul de mai sus. Scrieti intr-un fisier XAML continutul obiectului DataSet
+
+```cs
+using System.Data;
+using System.Diagnostics;
+
+using Microsoft.Data.SqlClient;
+
+String statement = "SELECT id, name FROM Customers";
+String conString = ConfigurationManger.ConnectionStrings["constring"].ConnectionString;
+SqlConnection con = new SqlConnection(conString);
+SqlCommand cmd = new SqlCommand(statement, con);
+SqlDataAdapter da = new SqlDataAdapter();
+da.SelectCommand = cmd;
+DataSet ds = new DataSet();
+da.Fill(ds, "Customers");
+```
+
+### TODO 7/10
+
+Implementati in Visual Studio exemplul de mai sus
+
+```cs
+using System.Data;
+using System.Diagnostics;
+
+using Microsoft.Data.SqlClient;
+
+SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constring"].ConnectionString);
+SqlDataAdapter da = new SqlDataAdapter("SELECT id, name, address FROM Customers", con);
+da.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+DataSet ds = new DataSet();
+da.Fill(ds);
+SqlCommandBuilder cb = new SqlCommandBuilder(da);
+DataSet dsChanges = ds.GetChanges();
+
+if (dsChanges != null)
+{
+    da.Update(dsChanges);
+    ds.AcceptChanges();
+}
+```
+
+#### Test de evaluare 1/2
+
+1. Despre ADO.NET:
+
+a) permite doar acces conectat la baze de date  
+b) permite doar acces deconectat la baze de date  
+c) permite accesarea de fisiere Excel  
+d) permite accesarea de surse de date expuse prin ODBC  
+
+> Raspuns:  
+c) permite accesarea de fisiere Excel  
+d) permite accesarea de surse de date expuse prin ODBC  
+
+2. Pentru accesarea unei baze de date Access, este nevoie de ADO.NET data provider (furnizor de date):  
+
+a) Sql  
+b) Oracle  
+c) MySql  
+d) OleDb  
+e) JDBC  
+
+> Raspuns:  
+d) OleDb  
+
+3. Despre DataAdapter
+
+a) are nevoie de patru obiecte Command pentru a aduce date din baza de date  
+b) lucreaza conectat la baza de date  
+c) e parte a unui furnizor de date  
+d) este componenta externa furnizorului de date  
+
+> Raspuns:  
+b) lucreaza conectat la baza de date  
+
+4. In cazul unui obiect de tip DataReader, cu ce se trece la urmatoarea inregistrare?
+
+a) NextResult()  
+b) Next()  
+c) GetBytes()  
+d) Niciunul din celelalte raspunsuri  
+
+> Raspuns:  
+d) Niciunul din celelalte raspunsuri  
+
+5. Ce este adevarat despre un obiect de tip SqlConnection:  
+
+a) Tipul lui implementeaza interfata IDisposable  
+b) Poate furniza un obiect de tip SqlTransaction  
+c) In string-ul de conexiune, "Data Source" e echivalent cu "Initial Catalog"  
+
+> Raspuns:  
+a) Tipul lui implementeaza interfata IDisposable  
+b) Poate furniza un obiect de tip SqlTransaction  
+
+### TODO 8/10 
+
+Implementati in Visual Studio exemplele de mai sus
+
+```cs
+using System.Data;
+
+string[] words = { "hello", "positive", "adjective", "linq", "world" };
+
+var longWords = from word in words
+                where word.Length >= 5
+                select word;
+
+var shortWords = from word in words
+                 where word.Length < 5
+                 select word;
+
+Console.WriteLine("Long words:");
+
+foreach (var word in longWords)
+{
+    Console.WriteLine(word);
+}
+
+List<Person> people = new List<Person>
+{
+    new Person
+    {
+        Id = 1,
+        RoleId = 1,
+        FirstName = "Brad",
+        LastName = "Anderson",
+    },
+    new Person
+    {
+        Id = 2,
+        RoleId = 2,
+        FirstName = "Tom",
+        LastName = "Gray",
+    },
+};
+
+var query = from p in people
+            where p.Id == 1
+            select new { p.FirstName, p.LastName };
+
+foreach (var q in query)
+{
+    Console.WriteLine(q);
+}
+
+class Person
+{
+    private int _id;
+    private int _roleId;
+    private string _firstName;
+    private string _lastName;
+
+    public int Id { get; set; }
+    public int RoleId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+
+```
+
+
+### TODO 9/10 
+
+Implementati in Visual Studio exemplele ce urmeaza
+
+
+```cs
+// 1. Sa se genereze un vector de intregi cu 40 de elemente, toate cu valoarea -1
+
+int[] arrNaive1 = new int[40];
+for (int i = 0; i < arrNaive1.Length; i++)
+{
+    arrNaive1[i] = -1;
+}
+
+// Linq
+int[] vecLinq1 = Enumerable.Repeat(-1, 40).ToArray();
+
+// 2. Sa se afiseze elementele unui tablou
+
+int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+foreach (int elem in arr)
+{
+    Console.WriteLine(elem);
+}
+
+// Linq
+Array.ForEach(arr, el => Console.WriteLine(el.ToString()));
+
+// 3. Sa se depuna intr-un tablou numerele de la 1 la 100
+
+int[] vecNaive2 = new int[100];
+for (int i = 0; i < vecNaive2.Length; i++)
+{
+    vecNaive2[i] = i + 1;
+}
+
+// Linq
+int[] vecLinq2 = Enumerable.Range(1, 100).ToArray();
+
+// 4. Sa se depuna intr-o lista primele 20 de litere
+
+var letters = Enumerable.Range(0, 20).Select(it => (char) ('a' + it)).ToList();
+
+// 5. Din lista numerelor de la 2 la 1000 sa se determine toate numerele care sunt prime (testarea primalitatii se face prin impartire)
+
+var primes = Enumerable.Range(2, 1000).Where(it => it.IsPrime());
+
+static class ExtensionMethods
+{
+    public static bool IsPrime(this int x)
+    {
+        return Enumerable.Range(2, (int)Math.Sqrt(x) - 1).FirstOrDefault(d => x % d == 0) == 0;
+    }
+}
+
+
+// 6. Din lista de salarii, sa se determine care este cel mai mare salariu - ca valoare.
+
+var salaryMax = salaries.Select(s => s.SalaryYear).Max();
+
+// 7. Folosind rezultatul de la punctul precedent, sa se determine care sunt salariatii care au luat salariul maxim, impreuna cu anii in care au luat acea suma
+
+var targetEmployees = from employee in employees
+           join salary in salaries
+           on employee.Id equals salary.EmployeeId
+           where salary.Year == salaryMax
+           select new { employee.FirstName, employee.LastName, salary.Year };
+
+// 8. Sa se determine salariatii care au salariul anual maxim, impreuna cu anul in care au luat respectivul salariu si rolul pe care il au.
+
+var target = from employee in employees
+             join salary in salaries
+             on employee.Id equals salary.EmployeeId
+             join role in roles
+             on employee.RoleId eualas role.Id
+             where salary.Year == salaryMax
+             select new { employee.FirstName, employee.LastName, salary.Year, role.Description };
+
+// 9. Daca pentru unii salariati se cunosc niste numere de telefon (colectie separata), atunci ce fel de jonctiune realizeaza 'join'?
+
+// Raspuns: Jonctiune interioara, adica doar date care au corespondenta pentru valorile specificate langa equals
+
+// 10. Sa se creeze o jonctiune la stanga intre colectia de salariati si telefoane; pentru salariatii care nu au numar de telefon sa se scrie 'niciun numar' respectiv 'nicio descriere' la numar si descriere
+
+var target = from employee in employees
+             from phone in phones.Where(ph => ph.EmployeeId == employee.Id).DefaultIfEmpty()
+             select new { 
+                 employee.FirstName, 
+                 employee.LastName, 
+                 Description = phone == null ? "Nicio descriere" : phone.Description, 
+                 Number = phone == null ? "Niciun numar" : phone.Number 
+             };
+```
+
+### TODO 10/10
+
+Care sunt alte implementari LINQ, date de catre terti?
+
+#### Test de evaluare 2/2
+
+1. Transformarea rezultatului unei interograi LINQ intr-un vector (tablou unidimensional) se obtine cu metoda:
+
+a) ToCollection()  
+b) ToVector()  
+c) ToList()  
+d) ToDictionary()
+
+> Raspuns:  
+Niciunul din raspunsurile data; transformarea se face cu metoda de extensie ToArray();  
+
+2. Pentru o colectie de elemente de tip intregi, ce poate sa returneze metoda ElementAtOrDefault?
+
+a) null  
+b) zero  
+d) un vector de numere  
+d) un numar aleator, daca parametrul trimis este negativ  
+
+> Raspuns:  
+b) zero  
+
+3. Jonctiunea interioara a doua colectii se obtine in LINQ cu:  
+
+a) Repeat  
+b) Jonctionate  
+c) Take  
+d) Skip  
+
+> Raspuns:  
+Niciunul din raspunsurile date; jonctiunea interioara se face cu metoda Join;
+
+4. Pentru interogari LINQ:  
+
+a) se permite sortare lexicografica, dupa mai multe criterii  
+b) se permite saltul peste niste elemente  
+c) se permite preluarea unui anumit numar de elemente  
+d) se permite ordonare crescatoare dupa criteriu si descrescatoare dupa altul  
+
+> Raspuns:  
+a) se permite sortare lexicografica, dupa mai multe criterii  
+b) se permite saltul peste niste elemente  
+c) se permite preluarea unui anumit numar de elemente  
+d) se permite ordonare crescatoare dupa criteriu si descrescatoare dupa altul  
+
+## Modulul 6
+
+### TODO 1/12
+
+Care sunt alte artibute predefinite, continute pe platforma .NET?
+Creati o lista care sa contina: denumirea atributelor, spatiile nume in care sunt definite, utilitate, exemplu
+
+* Namespace: System.SerializableAttribute [Serializable]  
+* Utilitate: Marcheaza un tip ca fiind serializabil, permitand instantele sale sa fie convenite dintr-un format care poate fi stocat si ulterior recreat
+* Exemplu:
+```cs
+[Serializable]
+public class MyClass
+{
+    public int MyProperty { get; set; }
+}
+```
+
+* Namespace: System.NonSerializedAttribute [NonSerialized]  
+* Utilitate: Indica faptul ca un camp nu trebuie serializat atunci cand un obiect este marcat ca SerializableAttribute
+* Exemplu:
+```cs
+[Serializable]
+public class MyClass 
+{
+    public int MyProperty { get; set; }
+
+    [NonSerialized]
+    private int _nonSerializedField;
+}
+```
+
+* Namespace: System.Web.Services.WebServiceAttribute [WebService] 
+* Utilitate: Marcheaza o clasa ca fiind un serviciu web XML
+* Exemplu:
+```cs
+[WebService(Namespace = "http://tempuri.org/")]
+public class MyWebService : System.Web.Services.WebService
+{
+
+}
+```
+
+* Namespace: System.Web.Services.WebMethodAttribute [WebMethod] 
+* Utilitate: Indica faptul ca o metoda publica a unui serviciu web este disponibila pentru apelurile de la distanta
+* Exemplu:
+```cs
+[WebService(Namespace = "http://tempuri.org/")]
+public class MyWebService : System.Web.Services.WebService
+{
+    [WebMethod]
+    public string GetHelloWorld() 
+    {
+        return "Hello, World!";
+    }
+}
+```
+
+* Namespace: System.AttributeUsageAttribute [AttributeUsage] 
+* Utilitate: Specifica utilizarile permise ale unui atribut definit de utilizator
+* Exemplu:
+```cs
+[AttributeUsage(ArributeTargets.Class | ArributeTargets.Method)]
+public class MyCusomAttribute : Attribute 
+{
+
+}
+```
+
+* Namespace: System.ObsoleteAttribute [Obsolete] 
+* Utilitate: Indica faptul ca un element de programare este invechid si va fi eliminat in viitor 
+* Exemplu:
+```cs
+[Obsolete("This method is obsolete. Use NewMethod instead.")]
+public void OldMethod() 
+{
+
+}
+```
+
+* Namespace: System.Reflection.AssemblyVersionAttribute [AssemblyVersion] 
+* Utilitate: Specifica numarul versiunii unui assembly
+* Exemplu:
+```cs
+[assembly: AssemblyVersion("1.0.0.0)]
+```
+
+* Namespace: System.Attribute.CLSCompliantAttribute [CLSCompliant] 
+* Utilitate: Indica faptul ca un program respecta specificatiile Common Language Specification (CLS)
+* Exemplu:
+```cs
+[CLSCompiant(true)]
+public class MyClass
+{
+
+}
+```
+
+* Namespace: System.Runtime.InteropServices.DllImportAttribute [DllImport]
+* Utilitate: Indica faptul ca o metoda expusa de la o biblioteca DLL negestionata este importata
+* Exemplu:
+```cs
+[DllImport("user32.dll", CharSet = CharSet.Auto)]
+public static extern int MessageBox(IntPtr hWnd, String text, String caption, uint type);
+```
+
+* Namespace: System.ComponentModel.DescriptionAttribute
+* Utilitate: Specifica o descriere pentru o proprietate sau un eveniment.
+* Exemplu:
+```cs
+[Description("This is a sample property.")]
+public int SampleProperty { get; set; }
+```
+
+* Namespace: System.ComponentModel
+* Utilitate: Specifica categoria unei proprietati sau unui eveniment
+* Exemplu:
+```cs
+[Category("Appearance")]
+public int SampleProperty { get; set; }
+```
+
+* Namespace: System.Diagnostics
+* Utilitate: Indica faptul ca apelurile metodei sunt conditionate de prezenta unui simbol de compilare specificat
+* Exemplu:
+```cs
+[Conditional("DEBUG")]
+public void DebugOnlyMethod()
+{
+
+}
+```
+
+* Namespace: System.Runtime.Serialization.DataMemberAttribute
+* Utilitate: Specifica ca un membru al unui tip este parte a unui contract de date si este serializabil
+* Exemplu:
+```cs
+[DataContract]
+public class MyDataContract
+{
+    [DataMember]
+    public int MyProperty { get; set; }
+}
+```
+
+* Namespace: System.Runtime.CompilerServices.CompilerGeneratedAttribute
+* Utilitate: Indica faptul ca un element a fost generat de compilator
+* Exemplu:
+```cs
+[CompilerGenerated]
+private sealed class CompilerGeneratedClass
+{
+
+}
+```
+
+### TODO 2/12
+
+Cum se trateaza urmatoarea situatie: avem 3 campuri declarate intr-o clasa, dar numai unul dintre ele vrem sa fie serializat, iar pentru celelalte varile continute sa nu fie salvate. Testati un astfel de exemplu in Visual Studio.
+
+```cs
+[Serializable]
+public class MyClass 
+{
+    public int MyProperty { get; set; }
+
+    [NonSerialized]
+    private int _nonSerializedFieldOne;
+
+    [NonSerialized]
+    private int _nonSerializedFieldTwo;
+}
+```
+
+#### Test de evaluare 1/4
+
+1. Tinta unui atribut poate fi:
+
+a) un assembly  
+b) un camp  
+c) un parametru  
+d) un tip  
+e) un constructor  
+
+> Raspuns:  
+a) un assembly  
+b) un camp  
+c) un parametru  
+d) un tip  
+e) un constructor  
+
+2. Pentru a declara o metoda ca fiind depasita se foloseste atributul
+
+a) Old  
+b) Deprecated  
+c) Obsoleted  
+d) nu exista un asemenea atribut  
+
+> Raspuns:  
+Niciunul din raspunsurile date; [Obsolete]
+
+3. Exista atribut predefinit in platforma prin care se poate declara ca o metoda sa fie chemata daca este definit un anumit simbol
+
+a) adeverat  
+b) false  
+
+> Raspuns:  
+a) adevarat
+
+4. Despre atribute:
+
+a) sunt tipuri valoare  
+b) sunt tipuri referinta  
+c) este obligatoriu ca sufixul unui astfel de tip sa fie Attribute  
+d) este recomandat ca sufixul unui astfel de tip sa fie Attribute
+
+> Raspuns:  
+b) sunt tipuri referinta  
+d) este recomandat ca sufixul unui astfel de tip sa fie Attribute  
+
+5. Atributul care specifica posibilitatea de serializare pentru un tip de date se numeste
+
+a) Savable  
+b) Filable  
+c) Serializable  
+d) Streamable  
+
+> Raspuns:  
+c) Serializable  
+
+### TODO 3/12
+
+Avand in vedere ca o metoda ce se lanseaza ca fir de executie nu primeste parametri, cum se trateaza situatia in care un thread trebuie sa prelucreze niste date specificate?
+
+```cs
+using System;
+using System.Threading;
+
+class SimpleThreadApp
+{
+    public static void WorkerThreadMethod()
+    {
+        Console.WriteLine("[WorkerThreadMethod] Worker thread started");
+    }
+
+    public static void Main()
+    {
+        ThreadStart worker = new ThreadStart(WorkerThreadMethod);
+        Console.WriteLine("[Main] Creating worker thread");
+        Thread t = new Thread(worker);
+        t.Start();
+        Console.WriteLine("[Main] The worker thread started");
+        Console.ReadLine();
+    }
+}
+
+/*
+[Main] Creating worker thread
+[Main] The worker thread started
+[WorkerThreadMethod] Worker thread started
+*/
+```
+
+### TODO 4/12
+
+#### Test de evaluare 2/4
+
+### TODO 5/12
+
+### TODO 6/12
+
+### TODO 7/12
+
+### TODO 8/12
+
+#### Test de evaluare 3/4
+
+### TODO 9/12
+
+### TODO 10/12
+
+### TODO 11/12
+
+### TODO 12/12
+
+#### Test de evaluare 4/4
+
+## Subiect Examen
+
+1. Despre parametrii optionali:
+
+a) Nu permit transmiterea altor valori decat cele specificate la declarare - Fals
+
+b) Se mai numesc si parametri cu valoare implicita - Adevarat
+
+c) Trebuie precizati dupa parametrii cu valori obligatorii - Adevarat
+
+d) Valorile asociate trebuie sa fie constante - Adevarat 
+
+2. Legat de suportul pentru tablouri mari din .NET 4.5:
+
+a) Daca sistemul de operare e pe 64 de biti, permite lucrul cu tablouri mai mari de 2 gigaocteti - Adevarat
+
+b) Necesita declarare specifica in fisierul de configurare - Adevarat
+
+c) Permite oricat de multe elemente, dar tabloul nu poate depasi 2 gigaocteti - Fals
+
+d) Se poate folosi doar pentru tablouri neregulate - Fals
+
+3. Despre directive using static 
+
+a) Permite importarea directa a claselor statice dintr-un spatiu de nume - Fals
+
+b) Permite importarea membrilor statici dintr-un tip de date - Adevarat
+
+c) Mareste eficienta codului la rulare - Fals
+
+d) Niciunul din celelalte raspunsuri nu e corect - Fals
+
+4. Despre filtrarea de exceptii
+
+a) Se foloseste bloc catch impreuna cu 'when' - Adevarat
+
+b) Se foloseste doar daca nu avem bloc finally - Fals
+
+c) Permite tratarea de exceptii in funcie de niste conditii - Adevarat
+
+5. Care din urmatoarele foloseste mecanismul de interpolare a sirurilor de caractere?
+
+a) var s = $"{p.Name} is {p.Age} year(s) old" - Adevarat
+
+b) string s = $"{p.Name} is {p.Age} yea(s) old" - Adevarat
+
+c) string s = p.Name + "is" + p.Age.ToString() + "year(s) old" - Fals
+
+d) Console.Write("{0} is {1} year(s) old", p.Name, p.Age); - Fals
+
+6. Despre atributul de serializare
+
+a) Se poate specifica la nivel de metoda - Fals
+
+b) Se poate specifica la nivel de camp - Fals
+
+c) Se declara astfel: clasa trebuie sa implementeze interfata ISerializable - Fals
+
+d) Se poate specifica la nivel de clasa - Adevarat 
+
+7. Despre fire de executie
+
+a) Gasim tipuri asociate in spatiul de nume System.Thread - Fals
+
+b) Intr-un proces de executie gasim cel putin un fir de executie - Adevarat
+
+c) Intr-un fir de executie ruleaza cel putin un proces - Fals
+
+d) Un fir de executie este o metoda ce trebuie declarata statica - Fals
+
+8. Legat de apelul metodei Join() pentru un thread t, (t.Join()):
+
+a) Suspenda firul t - Fals
+
+b) Suspenda firul care face acest apel - Adevarat
+
+c) Omooara firul t - Fals
+
+d) Adoarme firul t - Fals
+
+9. Despre prioritatea setata unui fir de executie
+
+a) Afecteaza toate firele din acelasi proces - Fals
+
+b) Se foloseste proprietatea Priority a tipului delegate - Fals
+
+c) Se bazeaza pe tipul structura ThreadPriorityLevel - Fals
+
+10. Despre proprietati cu implementare automata 
+
+a) Folosesc un camp privat, creat automat de catre compilator - Adevarat
+
+b) Pot avea implementare pentru unul din accesorii get sau set, dar nu pentru amandoi - Fals
+
+c) Proprietatea poate fi writeonly - Adevarat
+
+d) Pot fi calificate ca virtuale - Adevarat 
+
+11. Avem codul de mai jos. Care din urmatoarele sunt adevarate?
+```cs
+Person r = new Person("Rafael") 
+{LastName = "Popescu", Age=25};
+```
+
+a) Obligatoriu avem un constructor fara parametri - Fals
+
+b) Obligatoriu tipul Person este clasa - Fals
+
+c) Tipul Person poate fi clasa abstracta - Fals
+
+d) Obligatoriu proprietatea Age este de tip int - Fals
+
+12. Despre cuvantul cheie var
+
+a) La compilare se deduce automat tipul variabilei pentru care se foloseste - Adevarat
+
+b) La rulare se deduce automat tipul variabilei pentru care se foloseste - Fals
+
+c) Nu poate folosi pentru declarare de parametri formali in numele metodei - Adevarat
+
+d) Se poate folosi pentru declararea tipului iteratorului in ciclarea foreach - Adevarat
+
+13. Despre metode partiale:
+
+a) Necesita tipuri de date partiale - Fals
+
+b) Sunt implicit publice - Fals
+
+c) Sunt implicit statice - Fals
+
+d) Nu exista metode partiale - Fals
+
+CS0267	The 'partial' modifier can only appear immediately before 'class', 'record', 'struct', 'interface', or a method return type.	
+
+14. Se da un tablou 'tab' cu numere intregi. Cum se determina tabloul cu primele 5 numere pare (se presupune ca sunt minim 5 astfel de numere)?
+
+a) int[] result = tab.Where(x => x % 2 == 0).Take(5).ToArray(); - Adevarat
+
+b) int[] result = (from x in tab select x).Take(5).ToArray(); - Fals
+
+c) int[] result = (from x in tab where x % 2 == 0).Take(5).ToArray(); - Fals
+
+d) int[] result = tab.TakeWhile(x => x % 2 == 0).ToArray(); - Fals
+
+15. Care din secventele de mai jos produce colectia de numere de la 100 la 1, in aceasta ordine?
+
+a) var a = Enumerable.Range(100, 1, -1); - Fals
+
+b) var a = Enumerable.Range(1, 100).Invert(); - Fals
+
+c) var a = Enumerable.Range(1, 101).Reverse(); - Fals
+
+d) var a = Enumerable.Range(1, 100).Reverse(); - Adevarat
+
+16. Avem tablourile de intregi tab1 cu 4 elemente si tab2 cu 3 elemente. Care din variantele de mai jos produce colectia celor 12 perechi de elemente din tab1 si tab2 (toate combinatiile de valori, fiecare valoare din cate un tablou)?
+
+a) var collection = from a in tab1 from b in tab2 select new {a, b}; - Adevarat
+
+b) var collection = from a in tab1 join b in tab2 select new {a, b}; - Fals
+
+c) var collection = from x in tab1 and y in tab2 select new {a, b}; - Fals
+
+d) var collection = from i in Enumerable.Range(0, tab1.Length) from j in Enumerable.Range(0, tab2.Length) select new {a = tab1[i], b = tab2[j]} - Adevarat
+
+17. ADO.NET permite
+
+a) Lucrul conectat la baze de date - Adevarat
+
+b) Lucrul deconectat la baze de date - Adevarat
+
+c) Popularea de obiecte de tip DataSet - Adevarat
+
+d) Operarea cu servere de baze de date care nu sunt Microsoft - Adevarat
+
+18. In ce proprietate a unui obiect de tip SqlCommand se precizeaza detaliile de conectare (server, credentiale, baza de date)?
+
+a) DataBase - Fals
+
+b) ConnectionString - Adevarat
+
+c) ConnectionStrings - Fals
+
+d) DataAdapter - Fals
+
+19. Executia unei comenzi de inserare in baza de date, pornind de la un obiect SqlCommand, se face folosind metoda:
+
+a) Execute() - Fals
+
+b) ExecuteReader() - Fals
+
+c) ExecuteNonQuery() - Adevarat
+
+d) Run() - Fals
+
+20. Pentru serverele de baze de date care permit proceduri stocate, apelarea de procedura stocata folosind facilitate de ADO.NET este posibila
+
+a) Adevarat - Adevarat
+
+b) Fals - Fals
+
+21. Despre un obiect de tip SqlDataReader
+
+a) Lucreaza conectat la baza de date - Adevarat
+
+b) Acceseaza datele in sir forward only - Adevarat
+
+c) Prin proprietatea HasRows determina daca readerul contine cel putin o inregistrare - Adevarat
+
+d) Poate contine mai multe seturi de inregistrari, din mai multe tabele - Fals
+
+22. Despre clasele de tip DataAdapter
+
+a) Fac parte din furnizorii de date (data providers) - Adevarat
+
+b) Lucreaza deconctat de baza de date - Adevarat
+
+c) Permit aducerea, modificarea, stergere si inserarea de date (d)intr-o baza de date - Adevarat
+
+d) Sunt clase statice - Fals
+
+23. Despre tranzactii in baza de date
+
+a) Proprietatea ca toate operatiile din tranzactie trebuie sa aiba succes sau sa esueze impreuna se numeste consistenta - Adevarat
+
+b) Proprietatea ca o tranzactie duce baza de date dintr-o stare stabila in alta se numeste izolare - Fals
+
+c) Proprietatea ca nicio tranzactie nu ar trebui sa afecteze o alta care ruleaza in acelasi timp se cheama atomicitate - Fals
+
+24. Ce face parte dintr-un furnizor de date ADO.NET (ADO.NET data provider)?
+
+a) DataSet - Fals
+
+b) DataTable - Fals
+
+c) DataTableReader - Fals
+
+d) DataColumn - Fals
+
+25. Despre clasa DataSet
+
+a) Face parte din data provider - Fals
+
+b) Este dependent de tipul de baze de date - Fals
+
+c) Poate contine inregistrari din mai multe tabele - Adevarat
+
+d) Lucreaza conectat la baza de date - Fals
+
+26. Fiecare iteratie a ciclului foreach apeleaza metoda numita:
+
+a) Current - Fals
+
+b) MoveNext - Adevarat
+
+c) GetEnumerator - Fals
+
+d) Next - Fals
+
+27. Despre tipuri generice in C#
+
+a) Se mai numesc si tipuri template - Fals
+
+b) Pot fi folositi destructori cu parametri in genericitate - Fals
+
+c) Pot fi doar clase generice - Fals
+
+d) Putem avea tipuri delegat cu parametri de genericitate - Adevarat
+
+28. Pentru ce putem specifica parametri de genericitate?
+
+a) Pentru constructori statici - Fals
+
+b) Pentru destructori - Fals
+
+c) Pentru metode statice in cadrul claselor statice - Fals
+
+d) Pentru campuri in cadrul claselor - Adevarat
+
+29. Putem avea tipuri interfata cu parametri de genericitate:
+
+a) Adevarat - Adevarat
+
+b) Fals - Fals
+
+30. Despre constrangeri asupra parametrilor de genericitate
+
+a) Putem cere ca parametrul de genericitate sa fie de tip referita - Adevart
+
+b) Putem cere ca parametrul de genericitate sa fie tip cu constructor fara parametri - Adevarat
+
+c) Putem cere ca parametrul de genericitate sa aiba destructor - Fals
+
+d) Putem cere ca parametrul de genericitate sa implementeze o anumita interfata - Adevarat
+
+31. Despre colectii generice din C#
+
+a) Folosesc parametri de genericitate - Adevarat
+
+b) Sunt tipuri valoare - Fals
+
+c) Toate folosesc mecanismul de boxing - Fals
+
+d) In dictionare generice, cheia si valoarea pot avea tipuri diferite - Adevarat
+
+32. Despre tipurile delegat
+
+a) Delegatii multicast au tip de return void - Fals
+
+b) Delegatii multicast se folosesc pentru tratarea de evenimente - Adevarat
+
+c) Tipurile delegat se pot declara direct in spatii de nume - Adevarat
+
+d) Un tip delegat este tip referinta - Adevarat
+
+33. Ce este adevarat despre tipurile delegat?
+
+a) O variabila de tip delegat poate avea valoare de null - Adevarat
+
+b) O variabila de tip delegat multicast permite concatenarea de metode folosind + - Adevarat 
+
+c) Un tip delegat defineste o semnatura de metoda, dar nu specifica o implementare - Adevarat
+
+d) Putem declara un tip delegat eptrnu o metoda care nu preia niciun parametru - Adevarat
+
+34. Despre clase abstracte
+
+a) Pot fi instantiate - Fals
+
+b) Pot avea constructor cu implementare - Adevarat
+
+c) Pot declara metode abstracte - Adevarat
+
+d) Pot contine metode cu implementare asociata - Adevarat
+
+35. Avem variabila: String a = "abc". Ce puteti spune despre instructiunea a[0] = 'A';
+
+a) Declanseaza eroare de compilare si la rulare - Fals
+
+b) Declanseaza eroare de compilare - Adevarat
+
+c) Compilarea reuseste dar la rulare se arunca exceptie - Fals
+
+d) Se compileaza si ruleaza, dupa atribuire variabila a va contine valoarea "Abc" - Fals
+
+36. Despre tipurile interfata
+
+a) Implementarea explicita de metode in clase se face prin metode calificate cu private - Fals
+
+b) Implementarea explicita de metode in clase se face prin metode calificate cu public - Adevarat
+
+c) Implementarea explicita de metode in clase se face prin metode care nu au niciun calificator de acces - Fals
+
+d) Permit conversie implicita de la tip interfata la tip care implementeaza interfata - Adevarat
+
+37. Despre derivarea de clase
+
+a) Clasele calificate cu sealead nu pot servi drept clase de baza - Adevarat
+
+b) Clasele calificate cu final nu pot servi drept clase de baza - Fals
+
+c) O clasa poate fi derivata explicit din mai multe clase de baza - Fals
+
+d) Daca o clasa nu are niciun constructor instanta declarat, nu poate fi clasa de baza - Fals
+
+38. Despre tipuri structura
+
+a) Pot implementa tipuri interfata - Adevarat
+
+b) Pot contine constructor de instanta cu parametri - Adevarat
+
+c) Pot fi tipuri de baza - Fals
+
+d) Pot mosteni o clasa definita de programator - Fals
+
+39. Despre proprietati ca membri ai unei clase
+
+a) Pot fi calificate cu private protected - Fals
+
+b) Pot fi decorate cu atribute - Adevarat
+
+c) Pentru cele cu implementare explicita: pot fi write-only - Fals
+
+40. Pentru un camp de tip double declarat ca fiind constant
+
+a) Poate primi la declarare valoarea Math.Sqrt(10); - Fals
+
+b) E static - Fals
+
+c) Sunt implicit private - Adevarat 
+
+d) Sunt implicit public - Fals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

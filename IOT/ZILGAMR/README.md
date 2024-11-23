@@ -2,7 +2,7 @@
 
 Scopul acestui proiect este de a crea un simulator radar ultrasonic care poate detecta si urmari pozitiile obiectelor in timp real pe o raza de 300 cm si un unghi de 180 de grade.
 
-![preview](./img/preview.png)
+![preview](./res/preview.png)
 
 ## Functii principale
 Masurarea distantei obiectelor si urmarirea directiei folosind rotatia servo-ului si afisarea datelor pe ecranul TFT.
@@ -40,5 +40,7 @@ Masurarea distantei obiectelor si urmarirea directiei folosind rotatia servo-ulu
 
 ## Demo
 
-**VER-1.0.0.0**
-<video controls src="./res/demo.mp4" title="Demo"></video>
+**VER-1.0.0.0**  
+
+https://github.com/user-attachments/assets/fc83e070-1b88-43fc-a34a-fc0970f18a03
+
